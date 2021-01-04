@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="messageServiceImpl" class="com.reinmind.service.impl.MessageServiceImpl"/>
+    <!--Application需要注入,id只在xml的内部使用-->
+    <bean id="application" class="com.reinmind.Application">
+        <property name="messageService" ref="messageServiceImpl"/>
+    </bean>
+</beans>
